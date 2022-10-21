@@ -10,6 +10,9 @@ const form = document.getElementById('searchForm')
 const searchInput = document.getElementById('searchInput')
 const searchButton = document.getElementById('searchButton')
 
+// NOTE: Capture css root style
+const cssvar = document.querySelector(':root')
+
 // TODO: Decalre outputs
 const country = document.getElementById('country')
 const date = document.getElementById('date')
@@ -24,14 +27,17 @@ const error = document.getElementById('error')
 form.addEventListener('submit', handleSubmit);
 searchButton.addEventListener('click', handleSubmit);
 
+//placeholder till search
+getWeatherdata('lagos')
+
 function displayWeather(data){
     country.textContent = data.country
     date.textContent = data.date
-    weathertemperature.textContent = data.temperature
+    weathertemperature.textContent = `${data.temperature}${degreesymbol}`
     weathersummary.textContent = data.description
-    weatherboundary.textContent = `${data.temp_max} - ${data.temp_min}`
-    wind.textContent = data.windspeed
-    pressure.textContent = data.pressure
+    weatherboundary.textContent = `${data.temp_max}${degreesymbol} - ${data.temp_min}${degreesymbol}`
+    wind.textContent = `${data.windspeed} m/s`
+    pressure.textContent = `${data.pressure} hPa`
     place.textContent = data.place
     
 }
@@ -41,7 +47,24 @@ function handleSubmit(e){
     getLocation();    
 }
 
-async function getWeatherdata(place = 'lagos'){
+function formatStyles(data){
+    if (data.temperature > 20 ){
+        //black bg and white font
+        cssvar.style.setProperty('--background-color' , '#000000')
+        cssvar.style.setProperty('--font-color' , '#f8f9f5')
+
+        //red bg and white font
+        // cssvar.style.setProperty('--background-color' , '#880808')
+        // cssvar.style.setProperty('--font-color' , "#000000" )
+    }else {
+        //red bg and white font
+        cssvar.style.setProperty('--background-color' , '#880808')
+        cssvar.style.setProperty('--font-color' , "#000000" )
+    }
+
+}
+
+async function getWeatherdata(place ){
     // NOTE: Function to call api data 
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${place}&appid=${KEY}`
     const response = await fetch (url)
@@ -52,11 +75,12 @@ async function getWeatherdata(place = 'lagos'){
         clearerror()
         const data = await response.json()
         let Weatherdata = cleanData(data)
-        displayWeather(Weatherdata)
-        //formatStyles(Weatherdata)
-        reset()
+        await displayWeather(Weatherdata)
+        await formatStyles(Weatherdata)
+        await reset()
     }
 }
+
 function getLocation(){
     let place = searchInput.value
     let location = place.toLowerCase()
@@ -97,4 +121,3 @@ function showerror(){
 function reset(){
     form.reset();
 }
-getWeatherdata('Lagos')

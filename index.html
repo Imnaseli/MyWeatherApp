@@ -1,50 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
       <head>
-    <meta charset="UTF-8">
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title></title>
-        <link rel="stylesheet" type="css" href="style.css">
-      </head>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="mobilestyle.css">
+        <script src="https://kit.fontawesome.com/a205ea13f9.js" crossorigin="anonymous"></script>
+        
+        
+        <title>.</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;800&display=swap" rel="stylesheet">
+        </head>
         <body>
-            <!-- NOTE: div for the search input and button -->
-            <div id="searchDiv">
-                <div>
+            <div id="maindiv">
+                <!-- NOTE: div for the search input and button -->
+                <div id="searchDiv">
+                    <div>
+                    </div>
+
+                    <form id="searchForm">
+                        <input id="searchInput" type="text" placeholder="Search">
+                        <i class="fa-solid fa-magnifying-glass"><button id="searchButton"></button></i>
+                    </form>    
                 </div>
-                <form id="searchForm">
-                    <input id="searchInput" type="text" placeholder="Search a location">
-                    <button id="searchButton">Search</button>
-                </form>    
-            </div>
 
-            <div id="errordiv">
-                <p id="error"></p>
-            </div>
+                <div id="errordiv">
+                    <p id="error"></p>
+                </div>
 
-            <!-- NOTE: div for country and date  -->
-            <div id="countryanddate">
-                <p id="country"></p>
-                <p id="place"></p>
-                <p id="date"></p>
-            </div>
+                <!-- NOTE: div for country and date  -->
+                <div id="countryanddate">
+                    <p id="country"></p>
+                    <p id="place"></p>        
+                    <p id="date"></p>
+                </div>
 
-            <!-- NOTE: div for large weather temperature data-->
-            <div id="weathertemperaturediv">
-                <p id="weathertemperature"></p>
-            </div>
+                <!-- NOTE: div for large weather temperature data-->
+                <div id="weathertemperaturediv">
+                    <p id="weathertemperature"></p>
+                </div>
 
-            <!-- NOTE: div for weather summarization-->
-            <div id="weathersummaryboundary">
-                <p id="weathersummary"></p>
-                <p id="weatherboundary"></p>
-            </div>
+                <!-- NOTE: div for weather summarization-->
+                <div id="weathersummaryboundary">
+                    <p id="weathersummary"></p>
+                    <p id="weatherboundary"></p>
+                </div>
 
-            <!-- NOTE: div for wind and precipitation-->
-            <div id = "windprecipitation">
-                <p id="wind"></p>
-                <p id="pressure"></p>
+                <!-- NOTE: div for wind and precipitation-->
+                <div id = "windprecipitation">
+                    <p id="wind"></p>
+                    <p id="pressure"></p>
+                </div>
             </div>
-    <script src="index.js"></script>
-  </body>
+        <script src="index.js"></script>
+        </body>
 </html>

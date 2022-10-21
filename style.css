@@ -1,2 +1,111 @@
+/* red = #f3172d
+white = #f8f9f5
+yello = #FFFF00
+black = #000000
+blue = #0A68EF 
+*/
+
+:root{
+    --font-family:'Poppins';
+    --font-color:;
+    --background-color:;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body {
+    background-color: var(--background-color) ;
+    color: var(--font-color);
+    width: 100%;
+    height: 100vh;
+    /* overflow: hidden; */
+    font-family: var(--font-family)
+}
+
+body{
+    /* border: 0.5cm green dashed; */
+
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+}
+
+#maindiv{
+    /* border: 0.5cm red dashed; */
+
+    /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; */
+}
+
+#searchInput{
+    color: var(--font-color);
+    background-color: var(--background-color);
+    margin: 0.3em 0;
+    width: 15em;
+    height: 3em;
+    border: none;
+    border-bottom-style:groove ;
+    border-width: 0.1em;
+    border-color: var(--font-color);
+    
+}
+#searchInput:focus {
+    color: var(--font-color);
+    background-color: var(--background-color);
+    outline: none;
+    border-bottom-style:groove ;
+}
+::placeholder{ 
+    color: var(--font-color);
+    opacity: 1;
+}
+
+#country{
+    margin: 0.3em 0;
+    font-weight: 500;
+}
+
+#place{
+    font-weight: 900;
+}
+
+#weathertemperature{
+    font-size: 9em;
+}
+button{
+    /* background-color: transparent; */
+    color: var(--font-color);
+    border: none;
+    background-color: var(--background-color);
+}
+
+#weathersummary{
+    font-weight: 900;
+    margin: 0.3em 0;
+}
+
+#weatherboundary{
+    margin: 0.3em 0;
+}
+
+#weathersummaryboundary{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#windprecipitation{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
 
 
