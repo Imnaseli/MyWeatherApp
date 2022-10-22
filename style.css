@@ -20,28 +20,22 @@ html,
 body {
     background-color: var(--background-color) ;
     color: var(--font-color);
-    width: 100%;
-    height: 100vh;
+    margin: 0;
+    padding: 0;
     /* overflow: hidden; */
     font-family: var(--font-family)
 }
 
 body{
-    /* border: 0.5cm green dashed; */
-
     display: flex;
-    /* flex-direction: column; */
     align-items: center;
     justify-content: center;
 }
 
 #maindiv{
-    /* border: 0.5cm red dashed; */
-
-    /* display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; */
+    width: max(60vw , 250px);
+    height: 100vh;
+    box-sizing: border-box;
 }
 
 #searchInput{
