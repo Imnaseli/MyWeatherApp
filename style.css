@@ -22,19 +22,20 @@ body {
     color: var(--font-color);
     margin: 0;
     padding: 0;
-    /* overflow: hidden; */
+    height: 100vh;
+    overflow: hidden;
     font-family: var(--font-family)
 }
 
 body{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center;    
 }
 
 #maindiv{
-    width: max(60vw , 250px);
-    height: 100vh;
+    width: max(20vw , 250px);
+    height: 80vh;
     box-sizing: border-box;
 }
 
@@ -58,6 +59,7 @@ body{
 }
 ::placeholder{ 
     color: var(--font-color);
+    background-color: var(--background-color);
     opacity: 1;
 }
 
