@@ -54,9 +54,9 @@ function handleSubmit(e){
 function formatStyles(data){
     //NOTE: random number between 1 and 3
 
-    let colornum = Math.floor(Math.random() * 7) + 1  
+    let colornum = Math.floor(Math.random() * 8) + 1  
     //data.temperature
-    console.log(colornum)
+    //console.log(colornum)
 
     if (colornum == 1 ){
         //black bg and white font
@@ -86,6 +86,12 @@ function formatStyles(data){
          cssvar.style.setProperty('--background-color' , '#d2601a')
          cssvar.style.setProperty('--font-color' , "#1d3c45" )
     }
+    else if(colornum == 7){
+        //orange bg and deep pine font
+         cssvar.style.setProperty('--background-color' , '#101820ff')
+         cssvar.style.setProperty('--font-color' , "#f2aa4cff" )
+    }
+ 
     else {
         //yellow and black fonts
         cssvar.style.setProperty('--background-color' , '#FFFF00')
