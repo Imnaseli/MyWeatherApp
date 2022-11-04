@@ -1,4 +1,5 @@
 //  NOTE: Document.title can be used to change the title sha 
+
 document.title = 'Weather Application'
 const degreesymbol = '°'
 const KEY = "641586e03eb8a958802e9b8d71c40643";
@@ -6,14 +7,17 @@ const months = ["January", "February", "March", "April", "May", "June", "July", 
 const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
 // TODO: Declare inputs 
+//
 const form = document.getElementById('searchForm')
 const searchInput = document.getElementById('searchInput')
 const searchButton = document.getElementById('searchButton')
 
 // NOTE: Capture css root style
+//
 const cssvar = document.querySelector(':root')
 
 // TODO: Decalre outputs
+//
 const country = document.getElementById('country')
 const date = document.getElementById('date')
 const weathertemperature = document.getElementById('weathertemperature')
@@ -48,17 +52,43 @@ function handleSubmit(e){
 }
 
 function formatStyles(data){
-    if (data.temperature > 20 ){
+    //NOTE: random number between 1 and 3
+
+    let colornum = Math.floor(Math.random() * 7) + 1  
+    //data.temperature
+    console.log(colornum)
+
+    if (colornum == 1 ){
         //black bg and white font
         cssvar.style.setProperty('--background-color' , '#000000')
         cssvar.style.setProperty('--font-color' , '#f8f9f5')
-
-        //red bg and white font
-        // cssvar.style.setProperty('--background-color' , '#880808')
-        // cssvar.style.setProperty('--font-color' , "#000000" )
-    }else {
-        //red bg and white font
-        cssvar.style.setProperty('--background-color' , '#880808')
+    }
+    else if(colornum == 2){
+        //red bg and black font
+         cssvar.style.setProperty('--background-color' , '#97bc62ff')
+         cssvar.style.setProperty('--font-color' , "#2c5f2d" )
+    }
+    else if(colornum == 3){
+        //red bg and black font
+         cssvar.style.setProperty('--background-color' , '#880808')
+         cssvar.style.setProperty('--font-color' , "#000000" )
+    }
+    else if(colornum == 4){
+         cssvar.style.setProperty('--background-color' , '#060D08')
+         cssvar.style.setProperty('--font-color' , "#A24502" )
+    }
+     else if(colornum ==5){
+         cssvar.style.setProperty('--background-color' , '#a7beae')
+         cssvar.style.setProperty('--font-color' , "#b85042" )
+    }
+    else if(colornum == 6){
+        //orange bg and deep pine font
+         cssvar.style.setProperty('--background-color' , '#d2601a')
+         cssvar.style.setProperty('--font-color' , "#1d3c45" )
+    }
+    else {
+        //yellow and black fonts
+        cssvar.style.setProperty('--background-color' , '#FFFF00')
         cssvar.style.setProperty('--font-color' , "#000000" )
     }
 

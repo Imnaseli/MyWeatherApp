@@ -101,7 +101,10 @@ button{
     flex-direction: row;
     justify-content: space-between;
 }
-
+#searchbuttonpng{
+    background-color: var(--background-color);
+    color: var(--font-color);
+}
 
 
 
